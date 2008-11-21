@@ -24,6 +24,35 @@ Devel::CoreDump - create core dumps of the running perl interpreter, without ter
 
     Devel::CoreDump->write($path);
 
+=head1 METHODS
+
+=head2 get
+
+    my $fh = Devel::CoreDump->get;
+
+Returns a file handle that can be read to obtain a snapshot of the current
+state of this process. If a core file could not be generated for any reason, an
+exception is thrown.
+
+This function momentarily suspends all threads, while creating a COW
+(copy-on-write) copy of the process's address space.
+
+This function is neither reentrant nor async signal safe. Callers should wrap a
+mutex around the invocation of this function, if necessary.
+
+The current implementation tries very hard to behave reasonably when called
+from a signal handler, but no guarantees are made that this will always work.
+Most importantly, it is the caller's responsibility to make sure that there are
+never more than one instance of C<get()> or C<write()> executing concurrently.
+
+=head2 write($file)
+
+    Devel::CoreDump->write('perl.core');
+
+Writes the core file to disk. This is a convenience method wrapping
+C<get()>. If a core file could not be generated for any reason,
+an exception is thrown.
+
 =head1 AUTHOR
 
 Florian Ragwitz E<lt>rafl@debian.orgE<gt>
