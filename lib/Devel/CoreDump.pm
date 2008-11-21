@@ -22,7 +22,12 @@ Devel::CoreDump - create core dumps of the running perl interpreter, without ter
 
     use Devel::CoreDump;
 
-    Devel::CoreDump->write($path);
+    Devel::CoreDump->write('perl.core');
+
+=head1 DESCRIPTION
+
+This module allows to create GDB readable coredumps from the running perl
+interpreter, without terminating execution.
 
 =head1 METHODS
 
@@ -62,5 +67,13 @@ Florian Ragwitz E<lt>rafl@debian.orgE<gt>
 Copyright (c) 2008  Florian Ragwitz
 
 This software is distributed under the terms of the BSD License
+
+
+Parts of this module are taken from Google's coredumper library.
+L<http://code.google.com/p/google-coredumper/>.
+
+Copyright (c) 2005-2008, Google Inc.  All rights reserved.
+
+Coredumper is distributed under the terms of the BSD License.
 
 =cut
