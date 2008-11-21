@@ -1,0 +1,9 @@
+*.o
+CoreDump.*
+!CoreDump.xs
+!CoreDump.pm
+Makefile*
+!Makefile.PL
+META.yml
+inc
+*blib
