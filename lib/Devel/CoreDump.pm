@@ -4,6 +4,7 @@ use warnings;
 package Devel::CoreDump;
 
 use XSLoader;
+use IO::Handle;
 
 our $VERSION = '0.01';
 
