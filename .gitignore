@@ -11,3 +11,6 @@ MANIFEST*
 META.yml
 inc
 *blib
+Debian*
+README
+Devel-CoreDump-*
