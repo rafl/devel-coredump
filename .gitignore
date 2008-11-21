@@ -6,6 +6,8 @@ CoreDump.*
 !CoreDump.pm
 Makefile*
 !Makefile.PL
+MANIFEST*
+!MANIFEST.SKIP
 META.yml
 inc
 *blib
