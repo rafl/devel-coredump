@@ -5,6 +5,8 @@ use inc::Module::Install;
 name 'Devel-CoreDump';
 all_from 'lib/Devel/CoreDump.pm';
 
+extra_tests;
+
 my @OBJECT = map { "${_}.o" } qw(
     CoreDump
     src/coredumper
