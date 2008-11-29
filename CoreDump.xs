@@ -2,6 +2,8 @@
 #include "perl.h"
 #include "XSUB.h"
 
+#include "ppport.h"
+
 #include "google/coredumper.h"
 
 typedef int fd_t;
